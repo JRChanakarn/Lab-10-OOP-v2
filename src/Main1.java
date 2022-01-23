@@ -7,6 +7,8 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.DateTime;
+import org.eclipse.wb.swt.SWTResourceManager;
 
 public class Main1 {
 
@@ -52,16 +54,20 @@ public class Main1 {
 		composite.setBounds(30, 10, 415, 136);
 		
 		Label lblH = new Label(composite, SWT.NONE);
-		lblH.setBounds(29, 10, 59, 14);
-		lblH.setText("H ");
+		lblH.setBounds(67, 10, 59, 14);
+		lblH.setText("Hour");
 		
 		Label lblM = new Label(composite, SWT.NONE);
-		lblM.setBounds(175, 10, 59, 14);
-		lblM.setText("M");
+		lblM.setBounds(159, 10, 59, 14);
+		lblM.setText("Minute");
 		
 		Label lblS = new Label(composite, SWT.NONE);
-		lblS.setBounds(316, 10, 59, 14);
-		lblS.setText("S");
+		lblS.setBounds(250, 10, 59, 14);
+		lblS.setText("Second");
+		
+		DateTime dateTime = new DateTime(composite, SWT.BORDER | SWT.TIME);
+		dateTime.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 66, SWT.NORMAL));
+		dateTime.setBounds(39, 30, 336, 96);
 		
 		Button btnNewButton = new Button(shell, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
