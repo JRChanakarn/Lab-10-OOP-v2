@@ -65,6 +65,7 @@ public class Main1 {
 		lblS.setBounds(250, 10, 59, 14);
 		lblS.setText("Second");
 		
+		//add
 		DateTime dateTime = new DateTime(composite, SWT.BORDER | SWT.TIME);
 		dateTime.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 66, SWT.NORMAL));
 		dateTime.setBounds(39, 30, 336, 96);
