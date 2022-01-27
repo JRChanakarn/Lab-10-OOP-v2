@@ -10,6 +10,8 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.DateTime;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import P1.From2;
+
 public class Main1 {
 
 	protected Shell shell;
@@ -72,8 +74,13 @@ public class Main1 {
 		
 		Button btnNewButton = new Button(shell, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
-			@Override
+			
 			public void widgetSelected(SelectionEvent e) {
+				
+				Normal Nm = new Normal();
+				Nm.open();
+				
+				
 			}
 		});
 		btnNewButton.setBounds(41, 166, 177, 49);
