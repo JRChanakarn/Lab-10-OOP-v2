@@ -3,6 +3,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import P1.From1;
+
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -12,7 +15,7 @@ public class Normal {
 
 	protected Shell shell;
 	private Text text;
-
+	public int GMT ;
 	/**
 	 * Launch the application.
 	 * @param args
@@ -62,7 +65,10 @@ public class Normal {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				
-				//addd
+				
+				GMT = Integer.parseInt(text.getText());
+			
+				fm2.close();
 				
 				
 			}

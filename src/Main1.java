@@ -28,11 +28,12 @@ public class Main1 {
 	SimpleDateFormat timeFormat;	
 
 	private String JTex;
-	private Label lblCl;
-	private Label lblcl2;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
-	
-	
+	private Text text;
+	private int  sec ;
+	private int  minute ;
+	private int  houre ;
+	private int Gmt = 2;
 	
 	/**
 	 * Launch the application.
@@ -54,57 +55,12 @@ public class Main1 {
 	}
 
 	
-	public void setTime() {
-		
-		Thread clock = new Thread() {
-
-			
-
-			public void run() {
-				
-				try {
-					
-					for(;;) {
-						
-						Calendar cal = new GregorianCalendar();
-						int  sec = cal.get(Calendar.SECOND);
-						int  minute = cal.get(Calendar.MINUTE);
-						int  houre = cal.get(Calendar.HOUR);
-						
-						
-						System.out.println("Time  : "+houre+":"+ minute +":"+ sec);
-						//lblNewLabel.setText("Time"+houre + minute + sec);
-					
-						
-						JTex = houre+":"+ minute +":"+ sec;
-						System.out.println("JTex  : "+JTex);
-						
-						//jtext.setText("Time"+houre + minute + sec);
-						 
-						 
-					sleep(1000);
-					}
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				
-			}
-		
-		
-		
-	};
-	
-	clock.start();
-}
-		
 	
 	
 	public Main1() {
 		
 		setTime();
-
+		
 
 		
 	}
@@ -124,7 +80,7 @@ public class Main1 {
 			if (!display.readAndDispatch()) {
 				
 				display.sleep();
-				
+			
 			}
 		}
 		
@@ -144,66 +100,43 @@ public class Main1 {
 		shell = new Shell();
 		shell.setSize(473, 327);
 		shell.setText("SWT Application");
-	    LocalTime Time = LocalTime.now();
 		Normal Nm = new Normal();
-		Settime st = new Settime();
-		
-		
-		
-//		Settime st = new Settime();
-//		st.setTime();
-		
-		
-		DateTimeFormatter Time1 = DateTimeFormatter.ofPattern("HH:mm:ss");
-		
-		
-		String FT = Time.format(Time1);
-		
-		System.out.println(FT);
+
 	    
 	    
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(30, 10, 415, 136);
 		
 		Label lblH = new Label(composite, SWT.NONE);
-		lblH.setBounds(67, 10, 59, 14);
+		lblH.setBounds(82, 10, 59, 14);
 		lblH.setText("Hour");
 		
 		Label lblM = new Label(composite, SWT.NONE);
-		lblM.setBounds(159, 10, 59, 14);
+		lblM.setBounds(177, 10, 59, 14);
 		lblM.setText("Minute");
 		
 		Label lblS = new Label(composite, SWT.NONE);
 		lblS.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 11, SWT.NORMAL));
-		lblS.setBounds(250, 10, 59, 14);
+		lblS.setBounds(278, 10, 59, 14);
 		lblS.setText("Second");
 		
-
-		
-
-		
-	    lblCl = new Label(composite, SWT.NONE);
-		lblCl.setBounds(35, 30, 289, 42);
-		lblCl.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
-		
-		lblcl2 = formToolkit.createLabel(composite, "Clock", SWT.NONE);
-		lblcl2.setBounds(35, 89, 152, 37);
+		text = new Text(composite, SWT.BORDER);
+		text.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 30, SWT.NORMAL));
+		text.setEditable(false);
+		text.setBounds(39, 30, 323, 80);
+		//formToolkit.adapt(text, true, true);
 		
 		
 		
 		
-		DateTime dateTime = new DateTime(composite, SWT.BORDER | SWT.TIME);
-		dateTime.setBounds(216, 86, 105, 28);
-		formToolkit.adapt(dateTime);
-		formToolkit.paintBordersFor(dateTime);
-		lblcl2.setText(JTex);
 		
 		Button btnNewButton = new Button(shell, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			
 			public void widgetSelected(SelectionEvent e) {
 				
-			
+				Nm.open();
+				
 				
 				
 			}
@@ -238,8 +171,44 @@ public class Main1 {
 		btnNewButton_3.setBounds(247, 231, 177, 49);
 		btnNewButton_3.setText("Stop");
 		
+
+
+	}
+	
+	
+	public void setTime() {
 		
-		setTime();
+		new Thread(new Runnable() {
+		      public void run() {
+		         while (true) {
+		            try { Thread.sleep(1000); } catch (Exception e) { }
+		            Display.getDefault().asyncExec(new Runnable() {
+		               public void run() {
+		            	   
+								Calendar cal = new GregorianCalendar();
+								minute = cal.get(Calendar.MINUTE);
+								houre = cal.get(Calendar.HOUR_OF_DAY);
+								sec = cal.get(Calendar.SECOND);
+					
+								houre = houre+Gmt;
+								JTex ="      "+ houre +"     :    "+ minute +"     :     "+ sec;
+								text.setText(JTex);
+
+		               }
+		            });
+		         }
+		      }
+		   }).start();
+		
+		
+		
 		
 	}
+	
+	public void GMT() {
+		int Gmt = 0;
+		houre = houre + 2;
+		System.out.print(Gmt);
+	}
+	
 }
