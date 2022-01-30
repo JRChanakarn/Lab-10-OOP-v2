@@ -33,8 +33,8 @@ public class Main1 {
 	private int  sec ;
 	private int  minute ;
 	private int  houre ;
-	private int Gmt = 2;
-	
+	public int Gmt  = 0;
+	public int r  = 0;
 	/**
 	 * Launch the application.
 	 * @param args
@@ -59,7 +59,7 @@ public class Main1 {
 	
 	public Main1() {
 		
-		setTime();
+		
 		
 
 		
@@ -70,7 +70,7 @@ public class Main1 {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
-		
+		setTime();
 		createContents();
 		shell.open();
 		shell.layout();
@@ -103,7 +103,7 @@ public class Main1 {
 		Normal Nm = new Normal();
 
 	    
-	    
+		//setTime();
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(30, 10, 415, 136);
 		
@@ -136,7 +136,7 @@ public class Main1 {
 			public void widgetSelected(SelectionEvent e) {
 				
 				Nm.open();
-				
+				//Gmt = 2;
 				
 				
 			}
@@ -189,7 +189,8 @@ public class Main1 {
 								minute = cal.get(Calendar.MINUTE);
 								houre = cal.get(Calendar.HOUR_OF_DAY);
 								sec = cal.get(Calendar.SECOND);
-					
+								
+								System.out.println("In Thtread : "+houre +"+"+ Gmt);
 								houre = houre+Gmt;
 								JTex ="      "+ houre +"     :    "+ minute +"     :     "+ sec;
 								text.setText(JTex);
@@ -205,10 +206,20 @@ public class Main1 {
 		
 	}
 	
-	public void GMT() {
-		int Gmt = 0;
-		houre = houre + 2;
-		System.out.print(Gmt);
+	public void setGMT(int x) {
+		
+		this.r = x ;
+		System.out.println("r = " + r);
+		
+		
+	}
+	
+	public void getGMT() {
+		
+		this.Gmt = r;
+		System.out.println("Gmt = " + Gmt);
+		
+		
 	}
 	
 }

@@ -4,7 +4,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-import P1.From1;
+
 
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
@@ -15,7 +15,7 @@ public class Normal {
 
 	protected Shell shell;
 	private Text text;
-	public int GMT ;
+	public int GMT = 0;
 	/**
 	 * Launch the application.
 	 * @param args
@@ -68,7 +68,15 @@ public class Normal {
 				
 				GMT = Integer.parseInt(text.getText());
 			
-				fm2.close();
+				
+				Main1 window1 = new Main1();
+				window1.setGMT(GMT);
+				window1.getGMT();
+				shell.close();
+				
+				
+				
+				
 				
 				
 			}
