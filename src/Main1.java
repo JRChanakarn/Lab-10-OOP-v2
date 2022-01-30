@@ -24,11 +24,10 @@ public class Main1 {
 
 	protected Shell shell;
 	
-	private String time;
+
 	SimpleDateFormat timeFormat;	
 
 	private String JTex;
-	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
 	private Text text;
 	private int  sec ;
 	private int  minute ;
@@ -136,8 +135,14 @@ public class Main1 {
 			public void widgetSelected(SelectionEvent e) {
 				
 				Nm.open();
-				//Gmt = 2;
-				
+					
+				Gmt = Nm.getGMT();
+				if(Gmt >=24) {
+					Gmt = Gmt - 24;
+					
+				}
+				//System.out.println("Gmtnnbn = " + Gmt);
+					
 				
 			}
 		});
@@ -206,20 +211,6 @@ public class Main1 {
 		
 	}
 	
-	public void setGMT(int x) {
-		
-		this.r = x ;
-		System.out.println("r = " + r);
-		
-		
-	}
-	
-	public void getGMT() {
-		
-		this.Gmt = r;
-		System.out.println("Gmt = " + Gmt);
-		
-		
-	}
+
 	
 }

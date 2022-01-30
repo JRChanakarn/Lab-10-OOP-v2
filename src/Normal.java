@@ -70,8 +70,10 @@ public class Normal {
 			
 				
 				Main1 window1 = new Main1();
-				window1.setGMT(GMT);
-				window1.getGMT();
+				
+				
+				window1.r = GMT;
+				
 				shell.close();
 				
 				
@@ -85,4 +87,10 @@ public class Normal {
 		btnNewButton.setText("Summit Normal Setting");
 
 	}
+	
+	
+	public int getGMT() {
+		
+		return this.GMT ;
+	}//end method
 }
