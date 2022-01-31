@@ -145,7 +145,7 @@ public class Main1 {
 		Sec.setBounds(288, 30, 102, 79);
 		//formToolkit.adapt(text, true, true);
 		
-		
+		//test Fetch
 		
 		
 		
@@ -243,7 +243,7 @@ public class Main1 {
 									
 									
 								}
-								//System.ou
+								
 								JH =""+hour;
 								JM =""+minute;
 								JS =""+sec;
