@@ -27,8 +27,10 @@ public class Main1 {
 
 	SimpleDateFormat timeFormat;	
 
-	private String JTex;
-	private Text text;
+	private String JH;
+	private String JM;
+	private String JS;
+	private Text Hour;
 	private int  sec ;
 	private int  minute ;
 	private int  houre ;
@@ -40,6 +42,8 @@ public class Main1 {
 	Normal Nm = new Normal();
 	Alert Al = new Alert();
 	Alert2 Al2 = new Alert2();
+	private Text Min;
+	private Text Sec;
 	
 	/**
 	 * Launch the application.
@@ -113,22 +117,32 @@ public class Main1 {
 		composite.setBounds(30, 10, 415, 136);
 		
 		Label lblH = new Label(composite, SWT.NONE);
-		lblH.setBounds(82, 10, 59, 14);
+		lblH.setBounds(72, 10, 59, 14);
 		lblH.setText("Hour");
 		
 		Label lblM = new Label(composite, SWT.NONE);
-		lblM.setBounds(177, 10, 59, 14);
+		lblM.setBounds(189, 10, 59, 14);
 		lblM.setText("Minute");
 		
 		Label lblS = new Label(composite, SWT.NONE);
 		lblS.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 11, SWT.NORMAL));
-		lblS.setBounds(278, 10, 59, 14);
+		lblS.setBounds(316, 10, 59, 14);
 		lblS.setText("Second");
 		
-		text = new Text(composite, SWT.BORDER);
-		text.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 30, SWT.NORMAL));
-		text.setEditable(false);
-		text.setBounds(39, 30, 323, 80);
+		Hour = new Text(composite, SWT.BORDER);
+		Hour.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 30, SWT.NORMAL));
+		Hour.setEditable(false);
+		Hour.setBounds(35, 30, 102, 79);
+		
+		Min = new Text(composite, SWT.BORDER);
+		Min.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 30, SWT.NORMAL));
+		Min.setEditable(false);
+		Min.setBounds(161, 30, 102, 79);
+		
+		Sec = new Text(composite, SWT.BORDER);
+		Sec.setFont(SWTResourceManager.getFont(".AppleSystemUIFont", 30, SWT.NORMAL));
+		Sec.setEditable(false);
+		Sec.setBounds(288, 30, 102, 79);
 		//formToolkit.adapt(text, true, true);
 		
 		
@@ -230,8 +244,12 @@ public class Main1 {
 									
 								}
 								//System.ou
-								JTex ="      "+ houre +"     :    "+ minute +"     :     "+ sec;
-								text.setText(JTex);
+								JH =""+houre;
+								JM =""+minute;
+								JS =""+sec;
+								Hour.setText(JH);
+								Min.setText(JM);
+								Sec.setText(JS);
 
 		               }
 		            });
