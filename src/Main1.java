@@ -33,7 +33,7 @@ public class Main1 {
 	private Text Hour;
 	private int  sec ;
 	private int  minute ;
-	private int  houre ;
+	private int  hour ;
 	public int Gmt  = 0;
 	public int r  = 0;
 	public int ah  = 0;
@@ -223,28 +223,28 @@ public class Main1 {
 		            	   
 								Calendar cal = new GregorianCalendar();
 								minute = cal.get(Calendar.MINUTE);
-								houre = cal.get(Calendar.HOUR_OF_DAY);
+								hour = cal.get(Calendar.HOUR_OF_DAY);
 								sec = cal.get(Calendar.SECOND);
 								
 								
-								System.out.println("In Thtread : "+houre +"+"+ Gmt);
-								houre = houre+Gmt;
+								System.out.println("In Thtread : "+hour +"+"+ Gmt);
+								hour = hour+Gmt;
 								
 								
-								if(houre >=24) {
+								if(hour >=24) {
 									
-									houre = houre- 24;
+									hour = hour- 24;
 									
 								}
 								
-								if(houre == ah && minute == am && sec == as) {
+								if(hour == ah && minute == am && sec == as) {
 									
 									Al2.open();
 									
 									
 								}
 								//System.ou
-								JH =""+houre;
+								JH =""+hour;
 								JM =""+minute;
 								JS =""+sec;
 								Hour.setText(JH);
