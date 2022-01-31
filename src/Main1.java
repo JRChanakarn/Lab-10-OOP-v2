@@ -34,6 +34,13 @@ public class Main1 {
 	private int  houre ;
 	public int Gmt  = 0;
 	public int r  = 0;
+	public int ah  = 0;
+	public int am = 0;
+	public int as  = 0;
+	Normal Nm = new Normal();
+	Alert Al = new Alert();
+	Alert2 Al2 = new Alert2();
+	
 	/**
 	 * Launch the application.
 	 * @param args
@@ -98,8 +105,7 @@ public class Main1 {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setSize(473, 327);
-		shell.setText("SWT Application");
-		Normal Nm = new Normal();
+		shell.setText("Current Clock");
 
 	    
 		//setTime();
@@ -153,6 +159,17 @@ public class Main1 {
 		btnNewButton_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				
+				
+				
+				
+				Al.open();
+				setAlert();
+				System.out.println("timeMainii =  " + ah + " : " + am +" : " + as);
+				
+				
+				
+				
 			}
 		});
 		btnNewButton_1.setBounds(247, 166, 177, 49);
@@ -195,8 +212,24 @@ public class Main1 {
 								houre = cal.get(Calendar.HOUR_OF_DAY);
 								sec = cal.get(Calendar.SECOND);
 								
+								
 								System.out.println("In Thtread : "+houre +"+"+ Gmt);
 								houre = houre+Gmt;
+								
+								
+								if(houre >=24) {
+									
+									houre = houre- 24;
+									
+								}
+								
+								if(houre == ah && minute == am && sec == as) {
+									
+									Al2.open();
+									
+									
+								}
+								//System.ou
 								JTex ="      "+ houre +"     :    "+ minute +"     :     "+ sec;
 								text.setText(JTex);
 
@@ -211,6 +244,13 @@ public class Main1 {
 		
 	}
 	
+	public void setAlert() {
+		
+		 ah = Al.h ;
+		 am = Al.m ;
+		 as = Al.s;
 
+		
+	}
 	
 }
