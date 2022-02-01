@@ -42,6 +42,7 @@ public class Main1 {
 	Normal Nm = new Normal();
 	Alert Al = new Alert();
 	Alert2 Al2 = new Alert2();
+	Countdown Cd = new Countdown();
 	private Text Min;
 	private Text Sec;
 	
@@ -65,16 +66,6 @@ public class Main1 {
 	}
 
 	
-	
-	
-	public Main1() {
-		
-		
-		
-
-		
-	}
-	
 	/**
 	 * Open the window.
 	 */
@@ -96,10 +87,7 @@ public class Main1 {
 		
 	}
 
-	
-	
-	
-	
+
 	
 	
 	/**
@@ -145,7 +133,7 @@ public class Main1 {
 		Sec.setBounds(288, 30, 102, 79);
 		//formToolkit.adapt(text, true, true);
 		
-		
+		//test Fetch
 		
 		
 		
@@ -161,7 +149,7 @@ public class Main1 {
 					Gmt = Gmt - 24;
 					
 				}
-				//System.out.println("Gmtnnbn = " + Gmt);
+
 					
 				
 			}
@@ -173,16 +161,10 @@ public class Main1 {
 		btnNewButton_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
-				
-				
+					
 				
 				Al.open();
-				setAlert();
-				System.out.println("timeMainii =  " + ah + " : " + am +" : " + as);
-				
-				
-				
+				setAlert();		
 				
 			}
 		});
@@ -193,6 +175,9 @@ public class Main1 {
 		btnNewButton_2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				
+				Cd.open();
+				
 			}
 		});
 		btnNewButton_2.setBounds(41, 231, 177, 49);
@@ -226,8 +211,7 @@ public class Main1 {
 								hour = cal.get(Calendar.HOUR_OF_DAY);
 								sec = cal.get(Calendar.SECOND);
 								
-								
-								System.out.println("In Thtread : "+hour +"+"+ Gmt);
+			
 								hour = hour+Gmt;
 								
 								
@@ -243,7 +227,7 @@ public class Main1 {
 									
 									
 								}
-								//System.ou
+								
 								JH =""+hour;
 								JM =""+minute;
 								JS =""+sec;
