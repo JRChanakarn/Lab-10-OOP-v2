@@ -42,6 +42,7 @@ public class Main1 {
 	Normal Nm = new Normal();
 	Alert Al = new Alert();
 	Alert2 Al2 = new Alert2();
+	Countdown Cd = new Countdown();
 	private Text Min;
 	private Text Sec;
 	
@@ -193,6 +194,9 @@ public class Main1 {
 		btnNewButton_2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				
+				Cd.open();
+				
 			}
 		});
 		btnNewButton_2.setBounds(41, 231, 177, 49);
