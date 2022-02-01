@@ -71,12 +71,12 @@ public class Alert {
 				h = Integer.parseInt(H.getText());	
 				m = Integer.parseInt(M.getText());	
 				s = Integer.parseInt(S.getText());	
-				System.out.println("time =  " + h + " : " + m +" : " + s);
+
 				
 				M1.ah = h;
 				M1.am = m;
 				M1.as = s;
-				System.out.println("time =  " + M1.ah + " : " + M1.am +" : " + M1.as);
+
 				shell.close();
 				
 			}

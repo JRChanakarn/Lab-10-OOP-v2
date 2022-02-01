@@ -66,16 +66,6 @@ public class Main1 {
 	}
 
 	
-	
-	
-	public Main1() {
-		
-		
-		
-
-		
-	}
-	
 	/**
 	 * Open the window.
 	 */
@@ -97,10 +87,7 @@ public class Main1 {
 		
 	}
 
-	
-	
-	
-	
+
 	
 	
 	/**
@@ -162,7 +149,7 @@ public class Main1 {
 					Gmt = Gmt - 24;
 					
 				}
-				//System.out.println("Gmtnnbn = " + Gmt);
+
 					
 				
 			}
@@ -174,16 +161,10 @@ public class Main1 {
 		btnNewButton_1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				
-				
-				
+					
 				
 				Al.open();
-				setAlert();
-				System.out.println("timeMainii =  " + ah + " : " + am +" : " + as);
-				
-				
-				
+				setAlert();		
 				
 			}
 		});
@@ -230,8 +211,7 @@ public class Main1 {
 								hour = cal.get(Calendar.HOUR_OF_DAY);
 								sec = cal.get(Calendar.SECOND);
 								
-								
-								System.out.println("In Thtread : "+hour +"+"+ Gmt);
+			
 								hour = hour+Gmt;
 								
 								
