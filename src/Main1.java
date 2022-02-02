@@ -42,7 +42,7 @@ public class Main1 {
 	Normal Nm = new Normal();
 	Alert Al = new Alert();
 	Alert2 Al2 = new Alert2();
-	Countdown Cd = new Countdown();
+	countdown Cd = new countdown();
 	private Text Min;
 	private Text Sec;
 	
@@ -162,7 +162,7 @@ public class Main1 {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 					
-				
+				//
 				Al.open();
 				setAlert();		
 				
