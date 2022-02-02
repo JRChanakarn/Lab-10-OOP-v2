@@ -70,7 +70,7 @@ public class countdown {
 	protected void createContents() {
 		shell = new Shell();
 		shell.setSize(364, 275);
-		shell.setText("SWT Application");
+		shell.setText("Count Down");
 		
 		text1 = new Text(shell, SWT.BORDER);
 		text1.setBounds(10, 67, 84, 34);
